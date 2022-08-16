@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'ap-photo',
@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 
 export class PhotoComponent {
 
-  title = 'alurapic';
-  description = 'Leão';
-  url= 'https://st.depositphotos.com/1020341/4233/i/450/depositphotos_42333899-stock-photo-portrait-of-huge-beautiful-male.jpg';
+  @Input() description= '';
+
+  @Input() url= '';
 }
+
+/**
+ * @Input() O que acontece é que precisamos explicitar que tais propriedades podem receber um parâmetro externo, passando um valor por meio da forma declarativa do componente. Esses valores ficam dentro do seletor <ap-photo url"..." e description"...".
+ */
